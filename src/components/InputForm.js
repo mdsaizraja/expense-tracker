@@ -12,7 +12,11 @@ function InputForm() {
 
 
     const onSubmit = () => {
+    
+        e.preventDefault();
+        
             if( amount.length!==0 && label.length!==0){
+                e.preventDefault();
 
         const newEntry = { amount: amount, label: label }
 
@@ -121,6 +125,7 @@ function InputForm() {
 
             {
                 allEntry.map((curElm) => {
+                    
                   
                   
                     return (
@@ -128,6 +133,7 @@ function InputForm() {
                         <div>
                             <div className="card border-0">
                                 <div className="card-body text-center ">
+                                    
                                     
                                 { 
                              parseInt(curElm.amount)  > 0 ? <h4 className="card-text text-success">₹{curElm.amount}<span>({curElm.label})</span></h4> : <h4 className="card-text text-danger">₹{curElm.amount}<span>({curElm.label})</span></h4>
@@ -145,6 +151,7 @@ function InputForm() {
                         </div>
                     )
                 })
+                
             }
             </div>
 
